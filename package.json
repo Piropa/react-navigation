@@ -4,7 +4,7 @@
   "description": "Routing and navigation for your React Native apps",
   "main": "src/react-navigation.js",
   "repository": {
-    "url": "git@github.com:react-navigation/react-navigation.git",
+    "url": "git@github.com:Piropa/react-navigation.git",
     "type": "git"
   },
   "author": "Adam Miskiewicz <adam@sk3vy.com>, Eric Vicenti <ericvicenti@gmail.com>, Brent Vatne <brent@expo.io>",
