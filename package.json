@@ -9,6 +9,10 @@
   },
   "author": "Adam Miskiewicz <adam@sk3vy.com>, Eric Vicenti <ericvicenti@gmail.com>, Brent Vatne <brent@expo.io>",
   "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/Piropa/react-navigation/issues"
+  },
+  "homepage": "https://github.com/Piropa/react-navigation#readme",
   "scripts": {
     "start": "npm run ios",
     "ios": "cd examples/NavigationPlayground && yarn && yarn ios",
