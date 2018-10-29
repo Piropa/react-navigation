@@ -377,12 +377,12 @@ declare module 'react-navigation' {
         tintColor?: string,
         style?: TextStyleProp,
       }>
-    | React$ImageSourcePropType;
+    | React$ImageSource;
 
   declare type _HeaderButtonImageType =
     | React$ElementType
     | React$ComponentType<{ title?: string, tintColor?: string }>
-    | { source?: ?React$ImageSourcePropType };
+    | { source?: ?React$ImageSource };
 
   declare type _HeaderButtonProps = {
     onPress?: ?() => void,
@@ -392,8 +392,8 @@ declare module 'react-navigation' {
     tintColor?: ?string,
     truncatedTitle?: ?string,
     width?: ?number,
-    imageSource?: ?_HeaderButtonSourceType,
-    titleVisible?: ?boolean,
+    backImage?: ?_HeaderButtonSourceType,
+    backTitleVisible?: ?boolean,
     layoutPreset?: ?any,
   };
 
