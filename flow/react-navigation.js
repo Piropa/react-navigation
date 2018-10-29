@@ -370,6 +370,43 @@ declare module 'react-navigation' {
    * Stack Navigator
    */
 
+  declare type _HeaderButtonSourceType =
+    | React$ElementType
+    | React$ComponentType<{
+        title?: string,
+        tintColor?: string,
+        style?: TextStyleProp,
+      }>
+    | React$ImageSourcePropType;
+
+  declare type _HeaderButtonImageType =
+    | React$ElementType
+    | React$ComponentType<{ title?: string, tintColor?: string }>
+    | { source?: ?React$ImageSourcePropType };
+
+  declare type _HeaderButtonProps = {
+    onPress?: ?() => void,
+    pressColorAndroid?: ?string,
+    title?: ?string,
+    titleStyle?: ?TextStyleProp,
+    tintColor?: ?string,
+    truncatedTitle?: ?string,
+    width?: ?number,
+    imageSource?: ?_HeaderButtonSourceType,
+    titleVisible?: ?boolean,
+    layoutPreset?: ?any,
+  };
+
+  declare type _HeaderButtonType =
+    | React$ElementType
+    | React$ComponentType<_HeaderButtonProps>
+    | {
+        source?: ?React$ImageSourcePropType,
+        onPress?: ?() => void,
+        title?: ?string,
+        truncatedTitle?: ?string,
+      };
+
   declare export type NavigationStackScreenOptions = NavigationScreenOptions & {
     header?: ?(React$Node | (HeaderProps => React$Node)),
     headerTransparent?: boolean,
@@ -377,13 +414,23 @@ declare module 'react-navigation' {
     headerTitleStyle?: AnimatedTextStyleProp,
     headerTitleAllowFontScaling?: boolean,
     headerTintColor?: string,
-    headerLeft?: React$Node | React$ElementType,
+    // Left button - begin
+    headerLeft?: _HeaderButtonType,
     headerBackTitle?: string,
-    headerBackImage?: React$Node | React$ElementType,
+    headerBackImage?: _HeaderButtonImageType,
     headerTruncatedBackTitle?: string,
     headerBackTitleStyle?: TextStyleProp,
+    headerLeftOnPress?: ?() => void,
+    // Left button - end
     headerPressColorAndroid?: string,
-    headerRight?: React$Node,
+    // Right button - begin
+    headerRight?: _HeaderButtonType,
+    headerRightTitle?: string,
+    headerRightImage?: _HeaderButtonImageType,
+    headerTruncatedRightTitle?: string,
+    headerRightTitleStyle?: TextStyleProp,
+    headerRightOnPress?: ?() => void,
+    // Right button - end
     headerStyle?: ViewStyleProp,
     headerForceInset?: HeaderForceInset,
     headerBackground?: React$Node | React$ElementType,
@@ -1050,18 +1097,8 @@ declare module 'react-navigation' {
   };
   declare export var HeaderTitle: React$ComponentType<_HeaderTitleProps>;
 
-  declare type _HeaderBackButtonProps = {
-    onPress?: () => void,
-    pressColorAndroid?: string,
-    title?: ?string,
-    titleStyle?: ?TextStyleProp,
-    tintColor?: ?string,
-    truncatedTitle?: ?string,
-    width?: ?number,
-  };
-  declare export var HeaderBackButton: React$ComponentType<
-    _HeaderBackButtonProps
-  >;
+  declare export var HeaderBackButton: React$ComponentType<_HeaderButtonProps>;
+  declare export var HeaderRightButton: React$ComponentType<_HeaderButtonProps>;
 
   declare type _DrawerViewProps = {
     drawerLockMode?: 'unlocked' | 'locked-closed' | 'locked-open',

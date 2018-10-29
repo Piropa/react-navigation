@@ -148,6 +148,9 @@ module.exports = {
   get HeaderBackButton() {
     return require('react-navigation-stack').HeaderBackButton;
   },
+  get HeaderRightButton() {
+    return require('react-navigation-stack').HeaderRightButton;
+  },
   get HeaderStyleInterpolator() {
     return require('react-navigation-stack').HeaderStyleInterpolator;
   },
