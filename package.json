@@ -23,7 +23,8 @@
     "test-update-snapshot": "jest --updateSnapshot",
     "lint": "eslint .",
     "format": "eslint --fix .",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "xxx": "dir"
   },
   "files": [
     "src",
